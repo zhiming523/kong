@@ -2,30 +2,32 @@ import './sass/main.scss'
 
 
 jQuery(function ($) {
-  $('.newsletter-signup').on('submit', function (e) {
+  $('.newsletter-signup').on('submit', async function (e) {
     // submits data via ajax call
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
-    getUTMParameters(formData);
-    submitViaAjax(formData);
+    let url = window.location.href;
+    let data = await newsletterSubmit.getUTMParameters(formData, url);
+    submitViaAjax(data);
   });
 });
 
-function getParameterByName(name, url) {
-  name = name.replace(/[[\]]/g, '\\$&')
-  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-      results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-async function getUTMParameters(formData) {
-  let url = window.location.href;
-  let utmParameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-  await utmParameters.forEach(par => {
-    formData.append(par, getParameterByName(par, url))
-  })
+const newsletterSubmit = {
+  getParameterByName: (name, url) => {
+    name = name.replace(/[[\]]/g, '\\$&')
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+  },
+  getUTMParameters: async (formData, url) => {
+    let utmParameters = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    await utmParameters.forEach(par => {
+      formData.append(par, newsletterSubmit.getParameterByName(par, url))
+    });
+    return formData;
+  }
 }
 
 // this is a mock ajax call
@@ -38,3 +40,5 @@ function submitViaAjax(formData) {
   var json = JSON.stringify(object);
   console.log(json);
 }
+
+export default newsletterSubmit
