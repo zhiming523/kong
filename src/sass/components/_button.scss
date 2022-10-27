@@ -1,0 +1,10 @@
+.btn {
+    font-size: $btn-font-size;
+    padding: $btn-padding-x $btn-padding-y;
+    &-light {
+        color: $primary;
+        &:hover {
+            color: $primary;
+        }
+    }
+}

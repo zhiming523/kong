@@ -1,0 +1,12 @@
+.navbar {
+
+    .nav-link {
+        padding: 8px 20px;
+    }
+    @include media-breakpoint-up(sm) {
+        .nav-link {
+            padding: 8px 0;
+        }
+    }
+
+}

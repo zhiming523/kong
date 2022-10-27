@@ -1,0 +1,21 @@
+footer {
+    border-top: 1px solid $light-gray;
+    h5{
+        color: $footer-title-color;
+    }
+    p {
+        font-size: $font-size-xs;
+    }
+    li {
+        margin: 10px 0;
+        a {
+            color: $footer-link-color;
+            font-size: $font-footer-link-size;
+        }
+        .badge {
+            background-color: $footer-badge-color;
+            color: $primary-light;
+            font-weight: normal;
+        }
+    }
+}

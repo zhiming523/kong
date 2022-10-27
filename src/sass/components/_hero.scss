@@ -1,0 +1,50 @@
+.component.hero {
+  // Add your code here
+  margin-bottom: 2rem;
+  background: linear-gradient(270deg, $light 0%, rgba(236, 244, 250, 0) 100%);
+
+  .content, .the-media {
+    @include make-col(12);
+    @include make-col-ready();
+  }
+  .content {
+    order: 1;
+    padding: 100px 0;
+    .lead {
+      margin-bottom: $space-lg;
+    }
+    .btn-outline-primary {
+      margin-right: $space-lg;
+    }
+    p {
+      line-height: $space-lg;
+    }
+  }
+  .the-media {
+    order: 2;
+    padding: 0;
+  }
+
+  &.text-center {
+    .row {
+      justify-content: center;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .content {
+      @include make-col(5);
+    }
+    .the-media {
+      @include make-col(7);
+    }
+    &.content-right {
+      .content {
+        order: 2;
+      }
+      .the-media {
+        order: 1;
+      }
+    }
+  }
+}

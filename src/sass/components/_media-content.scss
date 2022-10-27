@@ -1,0 +1,49 @@
+.component.media-content {
+  margin-bottom: 0;
+  padding: 6rem 0;
+  .row {
+    align-items: center;
+  }
+
+  .content, .the-media {
+    @include make-col(12);
+    @include make-col-ready();
+  }
+  .content {
+    order: 1;
+    h2 {
+      margin-bottom: $space-xxl;
+    }
+    strong {
+      font-size: 1.25rem;
+      font-weight: 600;
+      line-height: 1.25rem;
+    }
+  }
+  .the-media {
+    order: 2;
+  }
+
+  &.text-center {
+    .row {
+      justify-content: center;
+    }
+  }
+  &.color-bg {
+    background: $bg-gray;
+  }
+
+  @include media-breakpoint-up(md) {
+    .content, .the-media {
+      @include make-col(6);
+    }
+    &.content-right {
+      .content {
+        order: 2;
+      }
+      .the-media {
+        order: 1;
+      }
+    }
+  }
+}

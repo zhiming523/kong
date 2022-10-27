@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+
+
+h1 {
+    font-weight: 700 !important;
+    font-size: $font-size-xl !important; //48px
+}
+h2 {
+    font-weight: 600 !important;
+    font-size: $font-size-lg !important; //36px
+}
+h5 {
+    font-weight: 500 !important;
+    font-size: $font-size-sm !important;
+}
+.subtitle {
+    font-weight: 600;
+    font-size: $font-size-md;
+    line-height: 1.65rem;
+}
+.lead {
+    font-size: 1rem !important;
+    line-height: $font-size-sm;
+}
+body {
+    color: $text-color;
+}
+
+a {
+    text-decoration: none !important;
+    color: $primary-light;
+    &:hover {
+        color: $primary;
+    }
+}
