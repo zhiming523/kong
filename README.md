@@ -1,5 +1,4 @@
-
-<h2 align="center">webpack-sass-bootstrap-boilerplate</h2>
+<h2 align="center">Kong Assessment</h2>
 
 <p align="center">
   <a href="https://github.com/shaminmeerankutty/webpack-sass-bootstrap-boilerplate/blob/master/LICENSE.md">
@@ -28,87 +27,61 @@
   </em>
 </p>
 
-This Webpack Sass Bootstrap boilerplate starter contains the features and scripts you need
-to get started quickly with Webpack bundling and building, Live Loading,gzip-compression and creating a dev server.
-
-It contains the following features:
-
-- Webpack 5 bundling
-- Babel ES6 Compiler
-- Sass Compiler
-- Bootstrap v4
-- jQuery 3.5.1
-- Popper.js 
-- Webpack Dev Server
-- Generates `gzip` of both css and js files  
-
-
-## Check Out Our Documentation
-If you want to check out our official documentation, just click [here](https://shaminmeerankutty.github.io/webpack-sass-bootstrap-boilerplate/). 
-
-It contains guidance on setting up this starter, as well as feature outlines.
-
-## Features
-
-### Webpack Loaders
-This starter contains the following webpack loaders:
-
-* Sass Loader for compiling sass (SCSS)
-* File Loader for loading asset files
-* HTML Loader for loading HTML files
-* Babel Loader for compiling ES6 code
-
-### Webpack Plugins 
-The following webpack plugins are also included:
-
-* Extract Text Plugin for extracting CSS files
-* Clean Webpack Plugin for cleaning unwanted files in dist directory
-* HTML Webpack Plugin for generating HTML files
-* Webpack Provider Plugin for providing jQuery & popper js to Bootstrap
-* Glob for matching HTML files
-
 ## Getting Started
 
 ### Requirements
-* Please make sure you have NodeJS installed, as this contains `npm`, which is necessary
-for installing dependencies, starting the appropriate scripts, and building your web project.
+
+- Please make sure you have NodeJS installed, as this contains `npm`, which is necessary
+  for installing dependencies, starting the appropriate scripts, and building your web project.
 
 ### Quick Start
+
 Clone the repo:
 
-    git clone https://github.com/shaminmeerankutty/webpack-sass-bootstrap-boilerplate.git
+    git clone https://github.com/zhiming523/kong.git
 
 Navigate to the project folder:
 
-    cd webpack-sass-bootstrap-boilerplate
+    cd kong
 
 Install all packages and dependencies required for this project:
 
     npm install
-    
+
 Start the development environment (then, navigate to http://localhost:8080):
 
     npm start
- 
-Then, open a browser and navigate to: http://localhost:8080/ 
-    
+
+Then, open a browser and navigate to: http://localhost:8080/
+
 Building files can be done as follows:
 
     npm run build
 
-### How To Use
-* Add your HTML files by inserting or including them in the `src` directory (By default `index.html` is added to your `src` directory, feel free to edit it and 
-experiment with the changes live.)
-    
-    * Make sure you restart development server after adding new HTML files
+### Design Considerations
 
-* Add images to your `src/assets` folder.
-* Add sass (SCSS) files to `src/scss` folder.
-  * Make sure you import the scss file in `main.scss` 
-    
+- Considerated when to use the bootstrap utilities class vs when to use custom scss to update the components. Without much background of the project I tried to make the decision that I think would be the easiest to help maintain the site in thefutre.
+
+### Assumptions
+
+- Given the Figma file has some inconsistent use of color, font-size, spacing, I assumed that it's not looking for pixel perfect rendering.
+- I'm assuming this is part part of larger site rather than a single page site, so I used variables for scss rather than just writting the values into the component scss files for easy update in the future.
+
+### How To Use
+
+- Add your HTML files by inserting or including them in the `src` directory (By default `index.html` is added to your `src` directory, feel free to edit it and
+  experiment with the changes live.)
+
+      * Make sure you restart development server after adding new HTML files
+
+- Add images to your `src/assets` folder.
+- Add sass (SCSS) files to `src/scss` folder.
+  - Make sure you import the scss file in `main.scss`
+
 ```sass
     @import "filename";
 ```
 
 # Licence
+
 Code released under the [MIT License](LICENSE.md).
