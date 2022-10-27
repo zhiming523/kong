@@ -58,6 +58,12 @@ Building files can be done as follows:
 
     npm run build
 
+### Run Unit Test
+
+Unit test using jest, to run unit test:
+
+    npm run test
+
 ### Design Considerations
 
 - Considerated when to use the bootstrap utilities class vs when to use custom scss to update the components. Without much background of the project I tried to make the decision that I think would be the easiest to help maintain the site in thefutre.
@@ -66,21 +72,6 @@ Building files can be done as follows:
 
 - Given the Figma file has some inconsistent use of color, font-size, spacing, I assumed that it's not looking for pixel perfect rendering.
 - I'm assuming this is part part of larger site rather than a single page site, so I used variables for scss rather than just writting the values into the component scss files for easy update in the future.
-
-### How To Use
-
-- Add your HTML files by inserting or including them in the `src` directory (By default `index.html` is added to your `src` directory, feel free to edit it and
-  experiment with the changes live.)
-
-      * Make sure you restart development server after adding new HTML files
-
-- Add images to your `src/assets` folder.
-- Add sass (SCSS) files to `src/scss` folder.
-  - Make sure you import the scss file in `main.scss`
-
-```sass
-    @import "filename";
-```
 
 # Licence
 
